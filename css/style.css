@@ -7,21 +7,43 @@ body{
 }
 
 h1{
-    padding-top: 38px;
+    padding-top: 26px;
 }
 
 button{
     padding: 10px; 
     border-radius: 10px;
-    background-color: rgb(0, 235, 255);
+    background-color:  rgb(0, 235, 255);
 }
 
+button:hover {
+    background-color:white;
+    transition: 0.3s ease;
+  }
+
 p{
-    padding-bottom: 22px;
+    padding-bottom: 3px;
 }
 
 img{
-    padding-top: 45px;
+    padding-top: 20px;
     width: 400px;    ;
     height: 400px;
+}
+
+#menuVoices2{
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+#menuVoices2:hover{
+    text-decoration: underline;
+}
+
+  
+footer{
+    position: absolute;
+    bottom:17px;
+    left:0;
+    width:100%;
 }
