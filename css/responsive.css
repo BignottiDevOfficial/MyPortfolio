@@ -18,6 +18,8 @@ nav a{
     text-decoration: none;
     transform: capitalize;
     color: black;
+    background-color: aqua;
+
 }
 
 #logo{
@@ -90,5 +92,21 @@ footer{
     width:100%;
 }
 
+header{
+    padding-top: 27px; 
+    padding-bottom: 23px; 
+    align-items: center;
+}
 
+#imgSkills{
+    padding-top: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+#imgSkills:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
 
