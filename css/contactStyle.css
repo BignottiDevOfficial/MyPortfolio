@@ -93,10 +93,6 @@ ul a:hover {
         opacity: 0;
         transition: all 0.5s ease-in-out;
         z-index: 10;
-        
-        width: 100%;
-        text-align: center;
-        background-color: rgb(60, 162, 196); /* Sfondo menu */
     }
 
     input[type="checkbox"]:checked ~ ul {
@@ -105,51 +101,11 @@ ul a:hover {
     }
 
     ul a {
-        background-color: rgb(60, 162, 196); 
-
-        padding: 1em; 
-        font-size: 1.5em;
-        text-align: center;
-        width: 100%; 
-        display: block;
-        background-color: transparent;
+        background-color: rgb(60, 162, 196); /* Stesso colore dello sfondo del menu */
     }
 
     ul a:hover {
-        background-color: rgb(120, 187, 254); 
-    }
-
-    nav {
-        padding: 1em; 
-        display: flex;
-        flex-direction: column;/* Mette logo e hamburger uno sopra l'altro */
-        text-align: center;
-    }
-
-    #div1 {
-        text-align: center;
-        padding: 20px;
-    }
-
-    #img1 {
-        width: 80%; /* Immagine più piccola */
-        height: auto;
-        margin-top: 20px;
-    }
-
-    button {
-        width: 80%;
-        max-width: 250px;
-        margin: 10px auto;
-        display: block;
-        font-size: 1.2em;
-    }
-
-    footer {
-        position: relative; /* Footer sempre giù */
-        text-align: center;
-        padding: 20px;
-        font-size: 0.9em;
+        background-color: rgb(120, 187, 254); /* Aqua solo su hover */
     }
 }
 
@@ -215,17 +171,6 @@ h1 {
 
 #imgLogo:hover {
     transform: scale(1.2) rotate(8deg);
-}
-
-.scroll-animate {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-.scroll-animate.show {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .scroll-animate {

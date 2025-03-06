@@ -1,111 +1,172 @@
+html {
+    scroll-behavior: smooth;
+}
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-nav{
+nav {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1em;
     background-color: aqua;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3); 
-    transition: all 0.3s ease-in-out; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    z-index: 10;
 }
 
-nav a{
+nav a {
     text-decoration: none;
-    transform: capitalize;
+    text-transform: capitalize;
     color: black;
-    background-color: aqua;
-    transition: background-color 0.3 ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
-#logo{
+#logo {
     font-size: 1.2em;
     font-weight: 600;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
 }
 
-label{
+label {
     display: none;
     cursor: pointer;
 }
 
-ul{
+ul {
     list-style: none;
     display: flex;
     gap: 1em;
+    transition: all 0.5s ease;
+    opacity: 1;
 }
 
 ul a {
     padding: 0.5em;
-    background-color: aqua; 
+    background-color: transparent; 
     transition: background-color 0.3s ease-in-out;
+    border-bottom: 3px solid transparent;
 }
 
-ul a:hover{
-    background-color: rgb(118, 179, 233); 
-}
-
-.active{
+ul a.active{
     border-bottom: 3px solid rgb(118, 179, 233);
 }
 
-@media screen and (max-width: 600px){
-    label{
+ul a:hover {
+    background-color: rgb(118, 179, 233); 
+    border-bottom: 3px solid transparent;
+}
+
+.active {
+    border-bottom: 3px solid rgb(118, 179, 233);
+}
+
+@media screen and (max-width: 600px) {
+    label {
         display: block;
+        z-index: 20;
     }
-    ul{
+
+    ul {
         font-size: 1.2em;
         position: absolute;
         left: -100%;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color:  rgb(60, 162, 196);
+        background-color: rgb(60, 162, 196);
         gap: 2em;
         top: 60px;
         width: 100%;
         height: calc(100vh - 60px);
-        transition: 0.5s;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        z-index: 10;
+        
+        width: 100%;
+        text-align: center;
+        background-color: rgb(60, 162, 196); /* Sfondo menu */
     }
 
-    input[type="checkbox"]:checked ~ ul{
+    input[type="checkbox"]:checked ~ ul {
         left: 0;
+        opacity: 1;
     }
 
-    ul a:hover{
-        background-color: rgb(134, 198, 255);
+    ul a {
+        background-color: rgb(60, 162, 196); 
+
+        padding: 1em; 
+        font-size: 1.5em;
+        text-align: center;
+        width: 100%; 
+        display: block;
+        background-color: transparent;
     }
 
-    nav a{
-        background-color: rgb(60, 162, 196);
+    ul a:hover {
+        background-color: rgb(120, 187, 254); 
     }
-    
+
+    nav {
+        padding: 1em; 
+        display: flex;
+        flex-direction: column;/* Mette logo e hamburger uno sopra l'altro */
+        text-align: center;
+    }
+
+    #div1 {
+        text-align: center;
+        padding: 20px;
+    }
+
+    #img1 {
+        width: 80%; /* Immagine più piccola */
+        height: auto;
+        margin-top: 20px;
+    }
+
+    button {
+        width: 80%;
+        max-width: 250px;
+        margin: 10px auto;
+        display: block;
+        font-size: 1.2em;
+    }
+
+    footer {
+        position: relative; /* Footer sempre giù */
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9em;
+    }
 }
 
-body{
+body {
     background-color: white;
 }
 
-#div1{
+#div1 {
     background-color: #ffffff;
+    padding: 25px 0;
 }
 
-p{
+p {
     padding-bottom: 17px;
 }
 
-button{
+button {
     border-radius: 10px;
     padding: 10px;
     background-color: aqua;
@@ -113,38 +174,67 @@ button{
 }
 
 button:hover {
-    transition: 0.3s ease;
     transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
-  }
+}
 
-
-footer{
+footer {
     position: absolute;
-    bottom:40px;
-    left:0;
-    width:100%;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
 }
 
-header{
-    padding-top: 27px; 
-    padding-bottom: 23px; 
-    align-items: center;
+header {
+    padding-top: 27px;
+    padding-bottom: 23px;
+    text-align: center;
 }
 
-#img1{
+h1 {
+    font-size: 2rem;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+#img1 {
     border-radius: 15px;
-    width: 375px;    
-    height: 375px;
+    width: 370px;
+    height: 370px;
     transition: transform 0.3s ease-in-out;
 }
 
-#img1:hover{
-   transform: scale(1.1);
-   transition: transform 0.3s ease-in-out;
+#img1:hover {
+    transform: scale(1.1);
 }
 
-.show {
+#imgLogo {
+    width: 80px;
+    border-radius: 50%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#imgLogo:hover {
+    transform: scale(1.2) rotate(8deg);
+}
+
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.scroll-animate.show {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
+}
+
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.scroll-animate.show {
+    opacity: 1;
+    transform: translateY(0);
 }
