@@ -179,6 +179,9 @@ ul a:hover {
     #span1{
         opacity: 0;
     }
+    h1{
+        padding-left: 20px;
+    }
 }
 
 
