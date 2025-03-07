@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>001</title>
+    <title>Home</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -29,19 +29,27 @@
                 </li>
             </ul>
         </nav>
-        <h1 style="padding-bottom: 10px; padding-top: 10px;" class="scroll-animate">Nello Bignotti | Bignotti Dev™ PRODUCTS</h1>
+        <h1 style="padding-bottom: 10px; padding-top: 10px;" class="scroll-animate">Nello Bignotti | Bignotti <span id="span2"> Dev™ <span class="span1">PRODUCTS</span></span></h1>
     </header>
    
-    <div style="padding-top: 25px; padding-bottom: 20px;" id="div1" class="scroll-animate">
+    <section class="container">
+
+        <div style="padding-top: 25px; padding-bottom: 20px;" id="div1" class="scroll-animate">
         
-        <p>I'm <b>Nello Bignotti</b>,
-        and i work hard every day to become <b>Junior Developer
-        </b></p>
-        <button>Access to my Portfolio</button>
-    </div>
-    <img src="./img/webdev.jpg" alt="NelloBignotti" id="img1" class="scroll-animate">
+            <p>I'm <b>Nello Bignotti</b>,
+            and i work hard every day to become <b>Junior Developer
+            </b></p>
+            <button>Access to my Portfolio</button>
+        </div>
+        <img src="./img/webdev.jpg" alt="NelloBignotti" id="img1" class="scroll-animate">
+
+    </section>
     
     <footer>by Nello Bignotti | BIGNOTTI TECH™ product | © 2025 Bignotti Dev™️</footer>
+
+
+
+
 
     <script defer>
         const checkbox = document.querySelector('#hamburger');
@@ -80,6 +88,19 @@
 
         window.addEventListener('scroll', scrollAnimation);
         window.addEventListener('load', scrollAnimation);
+    </script>
+
+    <script>
+        window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        header.classList.toggle("scrolled", window.scrollY > 50);
+        });
+
     </script>
 </body>
 </html>
