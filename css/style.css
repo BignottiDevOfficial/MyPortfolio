@@ -9,13 +9,7 @@ body {
     overflow-x: hidden;
     margin: 0;
 }
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
+ 
 nav {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
@@ -200,6 +194,14 @@ footer {
     bottom: 20px;
     left: 0;
     width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 12px;
+    
+    margin-top: auto; /*per farlo stare in fondo */
+    background-color: #000;
+    color: white;
+    padding: 15px;
 }
 
 header {
@@ -302,6 +304,9 @@ html, body {
 
     overflow-x: hidden; /* Per evitare movimenti strani */
     scroll-behavior: smooth; /* Scroll clean di BIGNOTTI TECH™ */
+
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -350,13 +355,6 @@ img {
     margin-top: 0;
 }
 
-footer {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 12px;
-}
-
-
 p {
     margin: 0 auto; /* Testo sempre centrato */
     max-width: 700px;
@@ -379,3 +377,52 @@ button {
     }
 }
 
+a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+ }
+ 
+ a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: cyan;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+ }
+ 
+ a:hover {
+    color: cyan;
+ }
+ 
+ a:hover::after {
+    width: 100%;
+    left: 0;
+ }
+
+ 
+ @keyframes glitch {
+    0% { text-shadow: 2px 2px red; }
+    25% { text-shadow: -2px -2px cyan; }
+    50% { text-shadow: 2px -2px magenta; }
+    75% { text-shadow: -2px 2px lime; }
+    100% { text-shadow: 2px 2px red; }
+ }
+ 
+ h1 {
+    /*animation: glitch 0.3s infinite alternate; cosi va al'infinito*/
+    animation: glitch 0.5s ease-in-out 3; /* Dura 0.5s e ripete solo 3 volte */
+     
+ }
+ 
+ /*oppure aggiungi id all'h1 di glitch-title e poi aggiungi uno script tipo
+ <script>
+   setTimeout(() => {
+       document.getElementById("glitch-title").style.animation = "none"; 
+   }, 1500); // Si ferma dopo 1.5 secondi (puoi modificare il tempo)
+</script>
+*/
