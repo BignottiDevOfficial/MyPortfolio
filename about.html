@@ -33,7 +33,7 @@
 
     <div style="border-radius: 15px; background-color: acqua;" class="scroll-animate">
         
-        <p style="padding-top: 20px;">Hi, my name is <b>Nello Bignotti</b>, I work every day to improve my developer-skills 
+        <p style="padding-top: 20px;" class="scroll-animate">Hi, my name is <b>Nello Bignotti</b>, I work every day to improve my developer-skills 
             to become a better <b>programmer</b> and offer better services. <br>I have <b>basic knoledge</b> 
             in the basics of web developing,
             specifically <b>html,css,javascript and C++.</b>
@@ -84,5 +84,36 @@
         window.addEventListener('scroll', scrollAnimation);
         window.addEventListener('load', scrollAnimation);
     </script>
+    <script>
+        const navbarItems = document.querySelectorAll('.scroll-animate');
+     
+        function scrollAnimation() {
+            animatedItems.forEach(item => {
+                const itemTop = item.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+     
+                if (itemTop < windowHeight - 50) {
+                    item.classList.add('show');
+                }
+            });
+        }
+     
+        window.addEventListener('scroll', scrollAnimation);
+        window.addEventListener('load', scrollAnimation);
+     </script>
+
+<script>
+    window.addEventListener("scroll", function() {
+        let navbar = document.querySelector("nav");
+        if (window.scrollY > 50) {
+            navbar.style.backdropFilter = "blur(10px)";
+            navbar.style.background = "rgba(0, 0, 0, 0.6)";
+        } else {
+            navbar.style.backdropFilter = "blur(0px)";
+            navbar.style.background = "rgba(0, 0, 0, 0.3)";
+        }
+    });
+ </script>
+     
 </body>
 </html>

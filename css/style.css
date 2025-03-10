@@ -29,7 +29,13 @@ nav {
     background-color: rgba(0, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     transition: background-color 0.3s ease-in-out;
+
 }
+
+nav.scrolled {
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.6);
+ }
 
 nav a {
     text-decoration: none;
@@ -159,9 +165,22 @@ ul a:hover {
         text-align: center;
         padding: 20px;
         font-size: 0.9em;
+        font-size: 12px;
+        padding: 15px;
     }
 
+    .container-card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     
+}
+
+@media screen and (min-width: 600px){
+    .container-card{
+        display: flex;
+    }
 }
 
 
@@ -190,13 +209,13 @@ button:hover {
 }
 
 footer {
-    position: absolute;
+    position: relative;
     bottom: 20px;
     left: 0;
     width: 100%;
     text-align: center;
     margin-top: 30px;
-    font-size: 12px;
+    font-size: 14px;
     
     margin-top: auto; /*per farlo stare in fondo */
     background-color: #000;
@@ -267,7 +286,7 @@ h1 {
 .scroll-animate {
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease;
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .scroll-animate.show {
@@ -426,3 +445,25 @@ a {
    }, 1500); // Si ferma dopo 1.5 secondi (puoi modificare il tempo)
 </script>
 */
+
+.card{
+    background-color: white;
+    padding: 20px;
+    margin: 15px;
+    width:300px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.container-card{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+} 

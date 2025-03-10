@@ -35,13 +35,27 @@
     <section class="container">
 
         <div style="padding-top: 25px; padding-bottom: 20px;" id="div1" class="scroll-animate">
-        
-            <p>I'm <b>Nello Bignotti</b>,
+            <p class="scroll-animate">I'm <b>Nello Bignotti</b>,
             and i work hard every day to become <b>Junior Developer
             </b></p>
             <button>Access to my Portfolio</button>
         </div>
         <img src="./img/webdev.jpg" alt="NelloBignotti" id="img1" class="scroll-animate">
+
+        <div class="container-card">
+            <div class="card">
+                <h2>Card Title</h2>
+                <p>That's a Animated Card</p>
+            </div>
+            <div class="card">
+                <h2>Card Title</h2>
+                <p>That's a Animated Card</p>
+            </div>
+            <div class="card">
+                <h2>Card Title</h2>
+                <p>That's a Animated Card</p>
+            </div>
+        </div>
 
     </section>
     
@@ -90,17 +104,32 @@
         window.addEventListener('load', scrollAnimation);
     </script>
 
+   
+
     <script>
-        window.addEventListener('scroll', () => {
-        const nav = document.querySelector('nav');
-        nav.classList.toggle('scrolled', window.scrollY > 50);
+    const navbarItems = document.querySelectorAll('.scroll-animate');
+ 
+    function scrollAnimation() {
+        animatedItems.forEach(item => {
+            const itemTop = item.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+ 
+            if (itemTop < windowHeight - 50) {
+                item.classList.add('show');
+            }
         });
+    }
+ 
+    window.addEventListener('scroll', scrollAnimation);
+    window.addEventListener('load', scrollAnimation);
+ </script>
 
-        window.addEventListener("scroll", function () {
-        const header = document.querySelector("header");
-        header.classList.toggle("scrolled", window.scrollY > 50);
-        });
+<script>
+    window.addEventListener("scroll", function() {
+        document.querySelector("nav").classList.toggle("scrolled", window.scrollY > 50);
+    });
+ </script>
 
-    </script>
+ 
 </body>
 </html>
