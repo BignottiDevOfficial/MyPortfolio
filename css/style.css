@@ -201,11 +201,14 @@ button {
     border-radius: 10px;
     padding: 10px;
     background-color: aqua;
-    transition: transform 0.3s ease-in-out;
+    color: black;
+    cursor:pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 button:hover {
     transform: scale(1.1);
+    box-shadow: 0px 0px 35px rgba(0, 255, 255, 0.9);
 }
 
 footer {
@@ -380,10 +383,12 @@ p {
     line-height: 1.5;
 }
 
+/* animazione per far pulsare il button
 
 button {
     animation: pulse 2s infinite ease-in-out;
 }
+
 
 @keyframes pulse {
     0%, 100% {
@@ -395,6 +400,7 @@ button {
         opacity: 0.8;
     }
 }
+*/
 
 a {
     color: white;
@@ -423,7 +429,7 @@ a {
     left: 0;
  }
 
- 
+/*
  @keyframes glitch {
     0% { text-shadow: 2px 2px red; }
     25% { text-shadow: -2px -2px cyan; }
@@ -433,18 +439,20 @@ a {
  }
  
  h1 {
-    /*animation: glitch 0.3s infinite alternate; cosi va al'infinito*/
-    animation: glitch 0.5s ease-in-out 3; /* Dura 0.5s e ripete solo 3 volte */
+    animation: glitch 0.3s infinite alternate; cosi va al'infinito
+    animation: glitch 0.5s ease-in-out 3;  Dura 0.5s e ripete solo 3 volte 
      
  }
  
- /*oppure aggiungi id all'h1 di glitch-title e poi aggiungi uno script tipo
+ oppure aggiungi id all'h1 di glitch-title e poi aggiungi uno script tipo
  <script>
    setTimeout(() => {
        document.getElementById("glitch-title").style.animation = "none"; 
    }, 1500); // Si ferma dopo 1.5 secondi (puoi modificare il tempo)
 </script>
 */
+
+
 
 .card{
     background-color: white;

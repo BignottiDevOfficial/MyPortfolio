@@ -27,7 +27,7 @@
                 </li>
             </ul>
         </nav>
-        <h1  style="padding-top: 10px" class="scroll-animate">About Me</h1>
+        <h1  style="padding-top: 10px" id="typing-title" class="scroll-animate"></h1>
     </header>
 
 
@@ -114,6 +114,22 @@
         }
     });
  </script>
+
+ <!--per scrivere il titolo carattere per carattere-->
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        const title = "About Me";
+        let i = 0;
+        function typeEffect(){
+            if(i < title.length){
+                document.getElementById("typing-title").innerHTML += title.charAt(i);
+                i++;
+                setTimeout(typeEffect, 100);
+            }
+        }
+        typeEffect();
+    });
+</script>
      
 </body>
 </html>

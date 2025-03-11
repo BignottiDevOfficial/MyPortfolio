@@ -385,7 +385,7 @@ a {
     left: 0;
  }
 
-
+/*
  @keyframes glitch {
     0% { text-shadow: 2px 2px red; }
     25% { text-shadow: -2px -2px cyan; }
@@ -395,12 +395,12 @@ a {
  }
  
  h1 {
-    /*animation: glitch 0.3s infinite alternate; cosi va al'infinito*/
-    animation: glitch 0.5s ease-in-out 3; /* Dura 0.5s e ripete solo 3 volte */
+    animation: glitch 0.3s infinite alternate; cosi va al'infinito
+    animation: glitch 0.5s ease-in-out 3;  Dura 0.5s e ripete solo 3 volte
      
  }
  
- /*oppure aggiungi id all'h1 di glitch-title e poi aggiungi uno script tipo
+ oppure aggiungi id all'h1 di glitch-title e poi aggiungi uno script tipo
  <script>
    setTimeout(() => {
        document.getElementById("glitch-title").style.animation = "none"; 

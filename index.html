@@ -29,7 +29,7 @@
                 </li>
             </ul>
         </nav>
-        <h1 style=" padding-top: 10px;" class="scroll-animate">Bignotti Dev PRODUCTS</h1>
+        <h1 style=" padding-top: 10px;" id="typing-title" class="scroll-animate"></h1>
     </header>
    
     <section class="container">
@@ -106,7 +106,7 @@
 
    
 
-    <script>
+<script>
     const navbarItems = document.querySelectorAll('.scroll-animate');
  
     function scrollAnimation() {
@@ -130,6 +130,21 @@
     });
  </script>
 
+<!--per scrivere il titolo carattere per carattere-->
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        const title = "Bignotti Dev PRODUCTS";
+        let i = 0;
+        function typeEffect(){
+            if(i < title.length){
+                document.getElementById("typing-title").innerHTML += title.charAt(i);
+                i++;
+                setTimeout(typeEffect, 100);
+            }
+        }
+        typeEffect();
+    });
+</script>
  
 </body>
 </html>
