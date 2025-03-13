@@ -130,6 +130,43 @@
         typeEffect();
     });
 </script>
+
+
+<!--cursore lampeggiante-->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const title = "About Me";
+        let i = 0;
+        let isTyping = true; // Per alternare il cursore lampeggiante
+        const titleElement = document.getElementById("typing-title");
+
+        function typeEffect() {
+            if (i < title.length) {
+                titleElement.innerHTML = title.substring(0, i + 1) + '<span class="cursor">|</span>';
+                i++;
+                setTimeout(typeEffect, 100);
+            } else {
+                const cursor = document.querySelector(".cursor");
+
+                // Fa lampeggiare il cursore
+                let blinkInterval = setInterval(() => {
+                    isTyping = !isTyping;
+                    cursor.style.opacity = isTyping ? "1" : "0";
+                }, 500);
+
+                // Dopo 3 secondi, ferma il lampeggio e rimuove il cursore
+                setTimeout(() => {
+                    clearInterval(blinkInterval); // Ferma il lampeggio
+                    cursor.style.display = "none"; // Nasconde il cursore
+                }, 3000);
+            }
+        }
+
+        typeEffect();
+    });
+</script>
+ 
      
 </body>
 </html>

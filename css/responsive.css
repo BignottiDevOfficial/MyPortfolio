@@ -208,6 +208,15 @@ footer {
     background-color: #000;
     color: white;
     padding: 15px;
+
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+footer:hover {
+    cursor: pointer;
+    transform: scale(1.08);
+    background-color: rgba(0, 0, 0, 0.82);
 }
 
 header {
@@ -243,7 +252,8 @@ h1 {
 }
 
 #img1:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
 }
 
 #imgLogo {
