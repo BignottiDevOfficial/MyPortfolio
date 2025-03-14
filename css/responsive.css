@@ -83,6 +83,14 @@ ul a:hover {
     border-bottom: 3px solid transparent;
 }
 
+li{
+    transition: transform 0.3s ease-in-out;
+}
+
+li:hover{
+    transform: scale(1.35);
+}
+
 .active {
     border-bottom: 3px solid rgb(118, 179, 233);
 }
@@ -417,3 +425,26 @@ a {
    }, 1500); // Si ferma dopo 1.5 secondi (puoi modificare il tempo)
 </script>
 */
+
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: aqua;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.45s ease-in-out;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}

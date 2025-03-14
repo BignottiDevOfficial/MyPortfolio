@@ -81,6 +81,15 @@ ul a.active{
 ul a:hover {
     background-color: rgb(118, 179, 233); 
     border-bottom: 3px solid transparent;
+
+}
+
+li{
+    transition: transform 0.3s ease-in-out;
+}
+
+li:hover{
+    transform: scale(1.35);
 }
 
 .active {
@@ -186,6 +195,7 @@ ul a:hover {
 
 body {
     background-color: white;
+    min-height: 150vh;
 }
 
 #div1 {
@@ -290,17 +300,6 @@ h1 {
 
 #imgLogo:hover {
     transform: scale(1.2) rotate(8deg);
-}
-
-.scroll-animate {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-.scroll-animate.show {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .scroll-animate {
@@ -499,3 +498,26 @@ a {
     gap: 20px;
     padding: 20px;
 } 
+
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: aqua;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}

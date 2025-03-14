@@ -43,25 +43,25 @@
         <img src="./img/webdev.jpg" alt="NelloBignotti" id="img1" class="scroll-animate">
 
         <div class="container-card">
-            <div class="card">
+            <div class="card scroll-animate">
                 <h2>Card Title</h2>
                 <p>That's a Animated Card</p>
             </div>
-            <div class="card">
+            <div class="card scroll-animate">
                 <h2>Card Title</h2>
                 <p>That's a Animated Card</p>
             </div>
-            <div class="card">
+            <div class="card scroll-animate">
                 <h2>Card Title</h2>
                 <p>That's a Animated Card</p>
             </div>
         </div>
-
+        
     </section>
     
     <footer>by Nello Bignotti | BIGNOTTI TECH™ product | © 2025 Bignotti Dev™️</footer>
 
-
+    <button id="backToTop" class="hidden">⬆</button> 
 
 
 
@@ -180,6 +180,31 @@
         typeEffect();
     });
 </script>
- 
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const backToTop = document.getElementById("backToTop");
+        if (!backToTop) {
+            console.error("⚠️ Il bottone 'backToTop' non è stato trovato nel DOM!");
+            return; // Esce dallo script se il bottone non esiste
+        }
+
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 200) { 
+                backToTop.classList.add("show");
+                backToTop.classList.remove("hidden");
+            } else {
+                backToTop.classList.remove("show");
+                backToTop.classList.add("hidden");
+            }
+        });
+
+        backToTop.addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    });
+</script>
+
+
 </body>
 </html>

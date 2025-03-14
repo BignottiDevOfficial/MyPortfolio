@@ -166,7 +166,32 @@
         typeEffect();
     });
 </script>
- 
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const backToTop = document.getElementById("backToTop");
+        if (!backToTop) {
+            console.error("⚠️ Il bottone 'backToTop' non è stato trovato nel DOM!");
+            return; // Esce dallo script se il bottone non esiste
+        }
+
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 200) { 
+                backToTop.classList.add("show");
+                backToTop.classList.remove("hidden");
+            } else {
+                backToTop.classList.remove("show");
+                backToTop.classList.add("hidden");
+            }
+        });
+
+        backToTop.addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    });
+</script>
+
+
      
 </body>
 </html>
