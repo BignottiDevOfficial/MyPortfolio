@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-
+    <!--href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body style="text-align: center; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
 
-    <header style=" height: 211.6px; background-color: aqua;padding-top: 27px; padding-bottom: 23px; margin: 0px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+    <header class="fadeIn" style=" height: 211.6px; background-color: aqua;padding-top: 27px; padding-bottom: 23px; margin: 0px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
         <nav>
             <a href="index.html" id="logo"><img src="./img/logo.jpg" alt="Logo" id="imgLogo"></a>
             <input type="checkbox" id="hamburger"/>
@@ -30,6 +30,7 @@
             </ul>
         </nav>
         <h1 style=" padding-top: 10px;" id="typing-title" class="scroll-animate"></h1>
+        <a href="" id="top"></a>
     </header>
    
     <section class="container">
@@ -38,25 +39,30 @@
             <p class="scroll-animate">I'm <b>Nello Bignotti</b>,
             and i work hard every day to become <b>Junior Developer
             </b></p>
-            <button>Access to my Portfolio</button>
+            
         </div>
         <img src="./img/webdev.jpg" alt="NelloBignotti" id="img1" class="scroll-animate">
 
         <div class="container-card">
-            <div class="card scroll-animate">
-                <h2>Card Title</h2>
-                <p>That's a Animated Card</p>
+            <div id="cardHTML" class="card scroll-animate">
+                <h3 style="padding-top: 15px;">My progects about</h3>
+                <h2>HTML</h2>
             </div>
-            <div class="card scroll-animate">
-                <h2>Card Title</h2>
-                <p>That's a Animated Card</p>
+            <div id="cardCSS" class="card scroll-animate">
+                <h3 style="padding-top: 15px;">My progects about</h3>
+                <h2>CSS</h2>
             </div>
-            <div class="card scroll-animate">
-                <h2>Card Title</h2>
-                <p>That's a Animated Card</p>
+            <div id="cardJS" class="card scroll-animate">
+                <h3 style="padding-top: 15px;">My progects about</h3>
+                <h2>JAVASCRIPT</h2>
             </div>
         </div>
+         
         
+    </section>
+
+    <section id="sectionButton" style="padding-top: 100px;">
+        <button>Access to my Portfolio</button>
     </section>
     
     <footer>by Nello Bignotti | BIGNOTTI TECH™ product | © 2025 Bignotti Dev™️</footer>
@@ -84,45 +90,30 @@
     </script>
 
     <!--per far salire gli elementi. questo script + css (show ecc ecc)-->
-    <script>
-        const animatedItems = document.querySelectorAll('.scroll-animate');
-
-        function scrollAnimation() {
-            animatedItems.forEach(item => {
-                const itemTop = item.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-
-                if (itemTop < windowHeight - 100) {
-                    item.classList.add('show');
-                }else {
-                    item.classList.remove('show');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', scrollAnimation);
-        window.addEventListener('load', scrollAnimation);
-    </script>
-
-   
-
 <script>
-    const navbarItems = document.querySelectorAll('.scroll-animate');
- 
+    document.addEventListener("DOMContentLoaded", function () {
+    const animatedItems = document.querySelectorAll('.scroll-animate');
+
     function scrollAnimation() {
-        animatedItems.forEach(item => {
+        animatedItems.forEach((item, index) => {
             const itemTop = item.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
- 
-            if (itemTop < windowHeight - 50) {
-                item.classList.add('show');
+
+            if (itemTop < windowHeight - 90) {
+                setTimeout(() => {
+                    item.classList.add('show');
+                }, index * 150); // Effetto a cascata
+            } else {
+                item.classList.remove('show');
             }
         });
     }
- 
+
     window.addEventListener('scroll', scrollAnimation);
     window.addEventListener('load', scrollAnimation);
- </script>
+});
+
+</script>
 
 <script>
     window.addEventListener("scroll", function() {
@@ -181,28 +172,46 @@
     });
 </script>
 
+<!--button backtotop per tornare in alto-->
 <script>
+    
+
     document.addEventListener("DOMContentLoaded", function() {
-        const backToTop = document.getElementById("backToTop");
-        if (!backToTop) {
-            console.error("⚠️ Il bottone 'backToTop' non è stato trovato nel DOM!");
-            return; // Esce dallo script se il bottone non esiste
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", function() {
+        if (window.scrollY > 200) { 
+            backToTop.classList.add("show");
+            backToTop.classList.remove("hidden");
+        } else {
+            backToTop.classList.remove("show");
+            backToTop.classList.add("hidden");
+        }
+    });
+    
+    backToTop.addEventListener("click", function() {
+        smoothScrollToTop(200); // Durata: 200ms
+    });
+
+    function smoothScrollToTop(duration) {
+        const start = window.scrollY;
+        const startTime = performance.now();
+
+        function scrollStep(currentTime) {
+            const elapsedTime = currentTime - startTime;
+            const progress = Math.min(elapsedTime / duration, 1); // Normalizza tra 0 e 1
+            window.scrollTo(0, start * (1 - progress));
+
+            if (progress < 1) {
+                requestAnimationFrame(scrollStep);
+            }
         }
 
-        window.addEventListener("scroll", function() {
-            if (window.scrollY > 200) { 
-                backToTop.classList.add("show");
-                backToTop.classList.remove("hidden");
-            } else {
-                backToTop.classList.remove("show");
-                backToTop.classList.add("hidden");
-            }
-        });
+        requestAnimationFrame(scrollStep);
+    }
+});
 
-        backToTop.addEventListener("click", function() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    });
+    
 </script>
 
 

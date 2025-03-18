@@ -285,17 +285,6 @@ h1 {
     transform: translateY(0);
 }
 
-.scroll-animate {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-.scroll-animate.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 nav.scrolled {
     padding: 0.5em; /* Navbar più piccola */
     background-color: rgba(0, 255, 255, 0.8);
