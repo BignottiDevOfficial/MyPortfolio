@@ -42,11 +42,12 @@ nav a {
     text-transform: capitalize;
     color: black;
     transition: background-color 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
 }
 
-#logo {
-    font-size: 1.2em;
-    font-weight: 600;
+a:focus, a:active {
+    outline: none; /* Rimuove bordi strani quando clicchi */
 }
 
 input[type="checkbox"] {
@@ -179,7 +180,7 @@ li:hover{
     }
 
     .container-card{
-        display: flex;
+        
         flex-direction: column;
         align-items: center;
     }
@@ -193,6 +194,11 @@ li:hover{
 @media screen and (min-width: 600px){
     .container-card{
         display: flex;
+    }
+
+    #sectionButton{
+        padding-top: 0px;
+        padding-bottom: 150px;
     }
 }
 
@@ -305,7 +311,15 @@ h1 {
     margin: 0;
     padding: 0;
     line-height: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-bottom: none;
 }
+
+#logo, #logo img {
+    border-bottom: none !important;
+}
+
 
 #imgLogo {
     width: 80px;
@@ -313,11 +327,14 @@ h1 {
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
     vertical-align: middle;
+    border-bottom: none;
+    
 }
 
 #imgLogo:hover {
     transform: scale(1.2) rotate(8deg);
     position: relative;
+    border-bottom: none;
 }
 
 .scroll-animate {
@@ -439,6 +456,7 @@ button {
 a {
     color: white;
     text-decoration: none;
+    border-bottom: none;
     position: relative;
     transition: color 0.3s ease-in-out;
  }
@@ -452,6 +470,7 @@ a {
     height: 2px;
     background-color: cyan;
     transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    text-decoration: none;
  }
  
  a:hover {
@@ -493,10 +512,12 @@ a {
     padding: 20px;
     margin: 15px;
     width:300px;
+    max-width: 300px;
     height: 150px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.5s ease-in,background-color 0.7s ease-out;
+    flex: 1 1 250px;
 }
 
 .card:hover{
@@ -515,6 +536,8 @@ a {
     display: flex;
     gap: 20px;
     padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 } 
 
 

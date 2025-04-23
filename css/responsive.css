@@ -44,11 +44,6 @@ nav a {
     transition: background-color 0.3s ease-in-out;
 }
 
-#logo {
-    font-size: 1.2em;
-    font-weight: 600;
-}
-
 input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
@@ -262,6 +257,19 @@ h1 {
 #img1:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease-in-out;
+}
+
+#logo{
+    text-decoration: none;
+    display: block;
+    outline: none;
+    text-decoration: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    font-size: 1.2em;
+    font-weight: 600;
 }
 
 #imgLogo {
